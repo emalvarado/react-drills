@@ -3,19 +3,61 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+  constructor(props){
+    super();
+
+    this.state = {
+      list: ['butterbeer', 'pumpkin pasties', 'pumpkin juice', 'chocolate frogs', 'treakle tart']
+    }
+  }
+  render(){
+    let listToDisplay = this.state.list.map((item, i)=>(
+      <h2 key={i}>{item}</h2>
+    ))
+    return(
+      <div>
+        {listToDisplay}
       </div>
-    );
+    )
   }
 }
 
+
+
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class App extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+//       array: ['spaghetti', 'ice cream', 'sushi', 'bologna', 'cheese']
+//     }
+//   }
+
+
+// render() {
+//   let list = this.state.array.map((e)=>{
+//    return <li key={e}>{e}</li>
+//   })
+//   return (
+//     <div className="App">
+//       {list}
+//     </div>
+//   );
+// }
+// }
